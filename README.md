@@ -25,40 +25,50 @@ The test code uses JUnit 5 annotations (@BeforeEach, @AfterEach, and @Test) to s
 
 ### AdressTest
 
-**1. Instance Variable Retrieval Tests:** 
+**1. Instance Variable Retrieval Tests**
+
 getUnitNumber(), getStreetNumber(), getStreetName(), getPostalCode(), and getCity() tests check if the corresponding getter methods return the expected values for the Address instance variables.
 
-**2. Expected Exceptions Tests:**
-  - Tests with the prefix getExpectedExceptions check if the Address constructor throws the expected exceptions for invalid input parameters during object creation.
-  - Invalid Unit Number: Empty string and a string with length > 4.
-  - Invalid Street Number: Negative value and a value > 999999.
-  - Invalid Street Name: Null, empty string, and a string with length > 20.
-  - Invalid Postal Code: Null, a string with length < 5, and a string with length > 6.
-  - Invalid City: Null, empty string, and a string with length > 30.
+**2. Expected Exceptions Tests**
+
+Tests with the prefix getExpectedExceptions check if the Address constructor throws the expected exceptions for invalid input parameters during object creation.
+- Invalid Unit Number: Empty string and a string with length > 4.
+- Invalid Street Number: Negative value and a value > 999999.
+- Invalid Street Name: Null, empty string, and a string with length > 20.
+- Invalid Postal Code: Null, a string with length < 5, and a string with length > 6.
+- Invalid City: Null, empty string, and a string with length > 30.
 
 ### AgencyTest
 
-**1. addGetProperty Test:**
+**1. Instance Variable Retrieval Tests**
 
-Verifies that a property can be added to the agency and retrieved using its property ID.
-removeProperty Test:
+These are tests that check if the instance variables (properties, in this case) can be correctly retrieved or manipulated through the methods provided by the Agency class. 
 
-Checks the ability to remove a property from the agency using its property ID.
-getTotalPropertyValues Test:
+For example, the addGetProperty and removeProperty methods test the ability to add properties to the agency and retrieve them by property ID.
 
-Validates that the total value of all properties in the agency is calculated correctly.
-getPropertiesWithPools Test:
+**2. Expected Exceptions Tests**
 
-Ensures that the method returns properties with pools, comparing the result to an expected list.
-getPropertiesBetween Test:
+These are tests that check if the methods handle expected exceptions correctly.
 
-Tests the method that retrieves properties within a specified price range, comparing the result to an expected list.
-getPropertiesOn Test:
+For example, the tests for invalid unit numbers, street numbers, street names, postal codes, and cities in the Address class.
+  
+**3. Functionality Tests**
 
-Tests the method that retrieves properties on a specific street, comparing the result to an expected list.
-getPropertiesWithBedrooms Test:
+These are tests that assess the overall functionality of the Agency class. They include tests for calculating total property values, identifying properties with pools, filtering properties based on price range, street name, bedrooms, and property type.
 
-Verifies the method that retrieves properties within a specified range of bedrooms, comparing the result to an expected list.
-getPropertiesOfType Test:
+### PropertyTest
 
-Tests the method that retrieves properties of a specific type (e.g., "commercial"), comparing the result to an expected list.
+**1. Instance Variable Retrieval Tests:**
+
+These tests (getPriceUsd, getAddress, getNumberOfBedrooms, hasSwimmingPool, getType, getPropertyId) check if the corresponding getter methods in the Property class correctly retrieve the values assigned during the setup.
+
+**2. Setter Method Test:**
+
+The setPriceUsd test checks if the setPriceUsd method correctly updates the price of the property.
+
+**3. Expected Exceptions Tests:**
+
+These tests (getExpectedExceptionsPriceUsd, getExpectedExceptionsAddress, getExpectedExceptionsNumBedrooms, getExpectedExceptionsPropertyType, getExpectedExceptionsPropertyId) check if the Property constructor handles expected exceptions correctly. 
+
+For example, it tests if the constructor correctly throws exceptions for negative prices, null addresses, invalid numbers of bedrooms, null property types, and invalid property IDs.
+
